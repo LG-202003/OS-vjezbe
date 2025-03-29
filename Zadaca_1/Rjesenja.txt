@@ -6,7 +6,7 @@ touch README.md
 cd .. 
 
 Zadatak 2
-mkdir vjezba2 && cd vjezba2 && touch file.txt
+cd vjezba2 && touch file.txt
 cp file.txt file_copy.txt
 ls
 rm file.txt && cd ..
