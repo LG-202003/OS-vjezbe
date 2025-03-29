@@ -15,7 +15,6 @@ cp -nv ../backup/* .
 ls -lAt1
 
 Zadatak 4.
-(Dal da napišem da izlazim iz data iz vjezba_2?)
 ls -laS
 ls -lSh
 ls -Rat --color
