@@ -1,0 +1,93 @@
+OS 3
+
+Zadatak 1.
+
+touch main.sh
+nano main.sh
+
+#!/bin/bash
+
+if [ $# -ne 2 ]; then
+        echo "Potrebno je proslijediti točno 2 argumenta"
+        exit 1
+fi
+
+x=1
+for datoteka in "$1"/*"$2"; do
+        if [ -f "$datoteka" ]; then
+                echo "$(basename "$datoteka")"
+                x=0
+        fi
+done
+
+if [ "$x" -eq 1 ]; then
+        echo "U direktoriju ne postoje datoteke s tim nastavkom"
+fi
+
+Zadatak 2.
+
+touch main.sh
+nano main.sh
+#!/bin/bash
+
+niz=()
+if [[ $1 -ge 1 && $1 -lt 10 ]]; then
+        touch brojevi.txt
+        for (( i=1; i<=$1; i++ )); do
+                niz+=("$i")
+        done
+        echo ${niz[@]} > brojevi.txt
+else
+        echo "Unesen broj izvan raspona"
+        exit 1
+fi
+
+(CTRL + X, ENTER, CTRL + O)
+./main.sh
+./main.sh 5
+
+Zadatak 3.
+
+mkdir Direktorij && touch Direktorij/OS3.md Direktorij/OS3.pdf && mkdir Direktorij/screenshots && cd Direktorij
+touch screenshots/bash.png screenshots/nano.png screenshots/vim.png
+touch main.sh
+nano main.sh
+
+
+broj_zapisa=1
+direktorij_screenshots=/mnt/c/Users/Leda/Desktop/Direktorij/screenshots
+
+for datoteka in "$direktorij_screenshots"/*; do
+        ime_datoteke="$(basename "$datoteka")"
+        mv "$datoteka" "$direktorij_screenshots"/"screenshot"_"$broj_zapisa>        broj_zapisa=$((broj_zapisa + 1))
+        echo "$datoteka"
+done
+
+Zadatak 4.
+
+touch main.sh
+nano main.sh
+
+#!/bin/bash
+
+dir_skript=$(pwd)
+dir_arg=$1
+
+if [ $# -ne 1 ]; then
+        echo "Potrebno je proslijediti samo 1 argument"
+        exit 1
+fi
+
+if [ ! -d  "$dir_arg" ]; then
+        echo "Direktorij ne postoji"
+        exit 1
+fi
+
+zip="zip_datoteka.zip"
+
+cd "$dir_arg" || exit 1
+zip -r "$zip" ./*
+
+
+
+
