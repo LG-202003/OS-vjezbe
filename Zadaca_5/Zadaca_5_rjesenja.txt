@@ -1,0 +1,65 @@
+1. Zadatak
+sudo apt install python3
+mkdir ./python3
+cd python3
+touch hello.py
+nano hello.py
+chmod +x hello.py
+./hello.py
+
+PID:1149 -jedinstveni identifikator procesa
+USER: leda_gerek - tko je pokrenuo proces
+PRI: 20 - prioritet procesa
+NI: 0 - "nice" vrijednost, određuje prioritet ne real-time procesa
+VIRT: 17968 -virtualna memorija koju proces koristi
+RES: 10240 -fizička memorija koju proces zauzima
+SHR: 6528 - dijeljena memorija koju proces koristi
+S: S - stanje procesa
+CPU%: 0.0 - postotak PCU-a koji proces koristi
+MEM%: 0.5 - postotak RAM-a koji proces koristi
+TIME+: 0:00.02 - vrijeme koje je proces koristio od pokretanja
+COMMAND: python3 ./hello.py - naziv i argumenti naredbe koja je pokrenula proces
+
+1. kill -9 PID -SIGKILL - prisilno prekida proces 
+2. kill -15 PID -SIGTERM - šalje zahtjev za prekidom procesa
+3. kill -2 PID -SIGINT - šalje procesu signal za prekid
+
+2. Zadatak
+
+mkdir old_dir && mkdir new_dir
+cd old_dir
+touch old_dir dat1.sh pythondat.py bla.txt
+cd ../new_dir
+touch dat2new.sh
+cd ..
+touch premjestaj.sh
+nano premjestaj.sh
+./premjestaj.sh
+nice -n 10 ./premjestaj.sh
+nice -n 1 ./premjestaj.sh
+
+3. Zadatak
+mkdir project
+sudo groupadd devteam
+sudo useradd -m -s /bin/bash dev1
+sudo useradd -m -s /bin/bash dev2
+sudo useradd -m -s /bin/bash dev3
+sudo usermod -a -G devteam dev1
+sudo usermod -a -G devteam dev2
+sudo usermod -a -G devteam dev3
+sudo usermod -a -G devteam leda_gerek
+sudo chown leda_gerek:devteam ./project
+sudo chmod 764 ./project
+
+4. Zadatak
+1. Vlasnik može čitati, pisati i izvršavati, grupa čitati i izvršavati, a ostali korisnici čitati i izvršavati
+2. Vlasnik može čitati i pisati, grupa čitati, a ostali korisnici čitati
+3. Vlasnik može čitati, pisati i izvršavati, grupa ništa, a ostali korisnici ništa
+4. Vlasnik može čitati i pisati, grupa čitati i pisati, a ostali korisnici čitati
+5. Vlasnik može čitati, pisati i izvršavati, grupa čitati, pisati i izvršavati, a ostali korisnici čitati, pisati i izvršavati
+6. Vlasnik može čitati, grupa čitati, a ostali korisnici čitati
+7. Vlasnik može čitati i pisati, grupa ništa, a ostali korisnici ništa
+
+5. Zadatak
+touch skripta.sh
+nano skripta.sh
